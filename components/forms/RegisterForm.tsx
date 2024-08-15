@@ -141,7 +141,7 @@ const RegisterForm = ({ user }: { user: User }) => {
               control={form.control}
               name="phone"
               label="Phone Number"
-              placeholder="(555) 123-4567"
+              placeholder="(234) 111 222 3333"
             />
           </div>
 
@@ -187,7 +187,7 @@ const RegisterForm = ({ user }: { user: User }) => {
               control={form.control}
               name="address"
               label="Address"
-              placeholder="14 street, New york, NY - 5101"
+              placeholder="14 Alimosho Street, Ikorodu, Lagos."
             />
 
             <CustomFormField
@@ -195,7 +195,7 @@ const RegisterForm = ({ user }: { user: User }) => {
               control={form.control}
               name="occupation"
               label="Occupation"
-              placeholder=" Software Engineer"
+              placeholder=" Caterer"
             />
           </div>
 
@@ -214,7 +214,7 @@ const RegisterForm = ({ user }: { user: User }) => {
               control={form.control}
               name="emergencyContactNumber"
               label="Emergency contact number"
-              placeholder="(555) 123-4567"
+              placeholder="(234) 111 222 3333"
             />
           </div>
         </section>
@@ -229,8 +229,8 @@ const RegisterForm = ({ user }: { user: User }) => {
             fieldType={FormFieldType.SELECT}
             control={form.control}
             name="primaryPhysician"
-            label="Primary care physician"
-            placeholder="Select a physician"
+            label="Primary care doctor"
+            placeholder="Select a doctor"
           >
             {Doctors.map((doctor, i) => (
               <SelectItem key={doctor.name + i} value={doctor.name}>
@@ -255,7 +255,7 @@ const RegisterForm = ({ user }: { user: User }) => {
               control={form.control}
               name="insuranceProvider"
               label="Insurance provider"
-              placeholder="BlueCross BlueShield"
+              placeholder="Leadway Insurance"
             />
 
             <CustomFormField
@@ -274,7 +274,7 @@ const RegisterForm = ({ user }: { user: User }) => {
               control={form.control}
               name="allergies"
               label="Allergies (if any)"
-              placeholder="Peanuts, Penicillin, Pollen"
+              placeholder="Garri, Penicillin"
             />
 
             <CustomFormField
@@ -293,7 +293,7 @@ const RegisterForm = ({ user }: { user: User }) => {
               control={form.control}
               name="familyMedicalHistory"
               label=" Family medical history (if relevant)"
-              placeholder="Mother had brain cancer, Father has hypertension"
+              placeholder="Mother had stroke, Father has hypertension"
             />
 
             <CustomFormField
@@ -301,7 +301,7 @@ const RegisterForm = ({ user }: { user: User }) => {
               control={form.control}
               name="pastMedicalHistory"
               label="Past medical history"
-              placeholder="Appendectomy in 2015, Asthma diagnosis in childhood"
+              placeholder="Typhoid Fever in 2020, Asthma diagnosis in childhood"
             />
           </div>
         </section>
