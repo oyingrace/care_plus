@@ -7,7 +7,7 @@
     "prettier"
   ],
   "rules": {
-    "no-undef": "off",
+    "all": "off",
     "import/order": [
       "error",
       {
