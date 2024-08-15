@@ -5,9 +5,44 @@ import { StatCard } from "@/components/StatCard";
 import { columns } from "@/components/table/columns";
 import { DataTable } from "@/components/table/DataTable";
 import { getRecentAppointmentList } from "@/lib/actions/appointment.actions";
+import { Appointment } from "@/types/appwrite.types";
 
 const AdminPage = async () => {
   const appointments = await getRecentAppointmentList();
+
+  if (!appointments || !appointments.documents) {
+    return (
+      <div>
+        <h1>Error loading appointments</h1>
+        <p>Unable to fetch the recent appointments. Please try again later.</p>
+      </div>
+    );
+  }
+
+  // Calculate counts only if appointments.documents is defined
+  const initialCounts = {
+    scheduledCount: 0,
+    pendingCount: 0,
+    cancelledCount: 0,
+  };
+
+  const counts = (appointments.documents as Appointment[]).reduce(
+    (acc, appointment) => {
+      switch (appointment.status) {
+        case "scheduled":
+          acc.scheduledCount++;
+          break;
+        case "pending":
+          acc.pendingCount++;
+          break;
+        case "cancelled":
+          acc.cancelledCount++;
+          break;
+      }
+      return acc;
+    },
+    initialCounts
+  );
 
   return (
     <div className="mx-auto flex max-w-7xl flex-col space-y-14">
